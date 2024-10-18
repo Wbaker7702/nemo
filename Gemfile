@@ -2,7 +2,7 @@
 
 source "http://rubygems.org"
 
-gem "rails", "~> 7.1.0"
+gem "rails", "~> 7.1.4", ">= 7.1.4.1"
 
 # Misc
 gem "attribute_normalizer", "~> 1.2"
