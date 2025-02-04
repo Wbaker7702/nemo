@@ -48,7 +48,7 @@
     "@rails/webpacker": "5.4.3",
     "@sentry/react": "6.19.7",
     "@sentry/tracing": "6.19.7",
-    "babel-loader": "8.2.5",
+    "babel-loader": "8.4.1",
     "core-js": "3.38.1",
     "css-loader": "6.9.0",
     "enketo-core": "6.1.7",
