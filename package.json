@@ -50,7 +50,7 @@
     "@sentry/tracing": "6.19.7",
     "babel-loader": "8.4.1",
     "core-js": "3.38.1",
-    "css-loader": "6.9.0",
+    "css-loader": "6.11.0",
     "enketo-core": "6.1.7",
     "ignore-loader": "0.1.2",
     "jquery": "3.6.0",
