@@ -4681,16 +4681,16 @@ css-has-pseudo@^0.10.0:
     postcss "^7.0.6"
     postcss-selector-parser "^5.0.0-rc.4"
 
-css-loader@6.9.0:
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-6.9.0.tgz#0cc2f14df94ed97c526c5ae42b6b13916d1d8d0e"
-  integrity sha512-3I5Nu4ytWlHvOP6zItjiHlefBNtrH+oehq8tnQa2kO305qpVyx9XNIT1CXIj5bgCJs7qICBCkgCYxQLKPANoLA==
+css-loader@6.11.0:
+  version "6.11.0"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-6.11.0.tgz#33bae3bf6363d0a7c2cf9031c96c744ff54d85ba"
+  integrity sha512-CTJ+AEQJjq5NzLga5pE39qdiSV56F8ywCIsqNIRF0r7BDgWsN25aazToqAFg7ZrtA/U016xudB3ffgweORxX7g==
   dependencies:
     icss-utils "^5.1.0"
-    postcss "^8.4.31"
-    postcss-modules-extract-imports "^3.0.0"
-    postcss-modules-local-by-default "^4.0.3"
-    postcss-modules-scope "^3.1.0"
+    postcss "^8.4.33"
+    postcss-modules-extract-imports "^3.1.0"
+    postcss-modules-local-by-default "^4.0.5"
+    postcss-modules-scope "^3.2.0"
     postcss-modules-values "^4.0.0"
     postcss-value-parser "^4.2.0"
     semver "^7.5.4"
@@ -8685,6 +8685,11 @@ nanoid@^3.3.7:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
 
+nanoid@^3.3.8:
+  version "3.3.8"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.8.tgz#b1be3030bee36aaff18bacb375e5cce521684baf"
+  integrity sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==
+
 nanomatch@^1.2.9:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/nanomatch/-/nanomatch-1.2.13.tgz#b87a8aa4fc0de8fe6be88895b38983ff265bd119"
@@ -9282,7 +9287,7 @@ picocolors@^1.0.0:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
 
-picocolors@^1.1.0:
+picocolors@^1.1.0, picocolors@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
   integrity sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==
@@ -9666,7 +9671,7 @@ postcss-modules-extract-imports@^2.0.0:
   dependencies:
     postcss "^7.0.5"
 
-postcss-modules-extract-imports@^3.0.0:
+postcss-modules-extract-imports@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/postcss-modules-extract-imports/-/postcss-modules-extract-imports-3.1.0.tgz#b4497cb85a9c0c4b5aabeb759bb25e8d89f15002"
   integrity sha512-k3kNe0aNFQDAZGbin48pL2VNidTF0w4/eASDsxlyspobzU3wZQLOGj7L9gfRe0Jo9/4uud09DsjFNH7winGv8Q==
@@ -9681,13 +9686,13 @@ postcss-modules-local-by-default@^3.0.2:
     postcss-selector-parser "^6.0.2"
     postcss-value-parser "^4.1.0"
 
-postcss-modules-local-by-default@^4.0.3:
-  version "4.0.5"
-  resolved "https://registry.yarnpkg.com/postcss-modules-local-by-default/-/postcss-modules-local-by-default-4.0.5.tgz#f1b9bd757a8edf4d8556e8d0f4f894260e3df78f"
-  integrity sha512-6MieY7sIfTK0hYfafw1OMEG+2bg8Q1ocHCpoWLqOKj3JXlKu4G7btkmM/B7lFubYkYWmRSPLZi5chid63ZaZYw==
+postcss-modules-local-by-default@^4.0.5:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/postcss-modules-local-by-default/-/postcss-modules-local-by-default-4.2.0.tgz#d150f43837831dae25e4085596e84f6f5d6ec368"
+  integrity sha512-5kcJm/zk+GJDSfw+V/42fJ5fhjL5YbFDl8nVdXkJPLLW+Vf9mTD5Xe0wqIaDnLuL2U6cDNpTr+UQ+v2HWIBhzw==
   dependencies:
     icss-utils "^5.0.0"
-    postcss-selector-parser "^6.0.2"
+    postcss-selector-parser "^7.0.0"
     postcss-value-parser "^4.1.0"
 
 postcss-modules-scope@^2.2.0:
@@ -9698,12 +9703,12 @@ postcss-modules-scope@^2.2.0:
     postcss "^7.0.6"
     postcss-selector-parser "^6.0.0"
 
-postcss-modules-scope@^3.1.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/postcss-modules-scope/-/postcss-modules-scope-3.2.0.tgz#a43d28289a169ce2c15c00c4e64c0858e43457d5"
-  integrity sha512-oq+g1ssrsZOsx9M96c5w8laRmvEu9C3adDSjI8oTcbfkrTE8hx/zfyobUoWIxaKPO8bt6S62kxpw5GqypEw1QQ==
+postcss-modules-scope@^3.2.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/postcss-modules-scope/-/postcss-modules-scope-3.2.1.tgz#1bbccddcb398f1d7a511e0a2d1d047718af4078c"
+  integrity sha512-m9jZstCVaqGjTAuny8MdgE88scJnCiQSlSrOWcTQgM2t32UBe+MUmFSO5t7VMSfAf/FJKImAxBav8ooCHJXCJA==
   dependencies:
-    postcss-selector-parser "^6.0.4"
+    postcss-selector-parser "^7.0.0"
 
 postcss-modules-values@^3.0.0:
   version "3.0.0"
@@ -9976,10 +9981,10 @@ postcss-selector-parser@^6.0.0, postcss-selector-parser@^6.0.13, postcss-selecto
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
 
-postcss-selector-parser@^6.0.4:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz#27ecb41fb0e3b6ba7a1ec84fff347f734c7929de"
-  integrity sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==
+postcss-selector-parser@^7.0.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/postcss-selector-parser/-/postcss-selector-parser-7.1.0.tgz#4d6af97eba65d73bc4d84bcb343e865d7dd16262"
+  integrity sha512-8sLjZwK0R+JlxlYcTuVnyT2v+htpdrjDOKuMcOVdYjt52Lh8hWRYpxBPoKx/Zg+bcjc3wx6fmQevMmUztS/ccA==
   dependencies:
     cssesc "^3.0.0"
     util-deprecate "^1.0.2"
@@ -10046,13 +10051,13 @@ postcss@^8.4.24:
     picocolors "^1.0.0"
     source-map-js "^1.2.0"
 
-postcss@^8.4.31:
-  version "8.4.47"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.47.tgz#5bf6c9a010f3e724c503bf03ef7947dcb0fea365"
-  integrity sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==
+postcss@^8.4.33:
+  version "8.5.2"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.2.tgz#e7b99cb9d2ec3e8dd424002e7c16517cb2b846bd"
+  integrity sha512-MjOadfU3Ys9KYoX0AdkBlFEF1Vx37uCCeN4ZHnmwm9FfpbsGWMZeBLMmmpY+6Ocqod7mkdZ0DT31OlbsFrLlkA==
   dependencies:
-    nanoid "^3.3.7"
-    picocolors "^1.1.0"
+    nanoid "^3.3.8"
+    picocolors "^1.1.1"
     source-map-js "^1.2.1"
 
 prelude-ls@^1.2.1:
