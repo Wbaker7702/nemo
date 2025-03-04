@@ -65,7 +65,7 @@
     "react-dates": "21.8.0",
     "react-select2-wrapper": "sassafrastech/react-select2-wrapper#2019-03-08-select2Full",
     "react_ujs": "2.7.1",
-    "regenerator-runtime": "0.13.9",
+    "regenerator-runtime": "0.14.0",
     "style-loader": "1.2.1",
     "webpack": "5.97.0",
     "webpack-cli": "4.10.0"
