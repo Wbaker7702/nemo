@@ -44,7 +44,6 @@
     "@babel/plugin-transform-runtime": "7.18.10",
     "@babel/preset-env": "7.26.0",
     "@babel/preset-react": "7.25.9",
-
     "@rails/webpacker": "5.4.3",
     "@sentry/react": "6.19.7",
     "@sentry/tracing": "6.19.7",
@@ -68,7 +67,8 @@
     "regenerator-runtime": "0.14.0",
     "style-loader": "1.2.1",
     "webpack": "5.97.0",
-    "webpack-cli": "4.10.0"
+    "webpack-cli": "4.10.0",
+    "dompurify": "^3.2.6"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.9",

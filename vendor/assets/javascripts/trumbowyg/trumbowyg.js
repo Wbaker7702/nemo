@@ -9,6 +9,7 @@
  *         Website : alex-d.fr
  */
 
+import DOMPurify from 'dompurify'; // Import DOMPurify for sanitization
 jQuery.trumbowyg = {
     langs: {
         en: {
@@ -511,6 +512,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             t.isTextarea = t.$ta.is('textarea');
             if (t.isTextarea) {
                 html = t.$ta.val();
+                html = DOMPurify.sanitize(html); // Sanitize the input to prevent XSS
                 t.$ed = $('<div/>');
                 t.$box
                     .insertAfter(t.$ta)
