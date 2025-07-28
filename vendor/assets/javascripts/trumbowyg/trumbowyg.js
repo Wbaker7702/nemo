@@ -9,6 +9,7 @@
  *         Website : alex-d.fr
  */
 
+import DOMPurify from 'dompurify'; // Import DOMPurify for sanitization
 jQuery.trumbowyg = {
     langs: {
         en: {
@@ -231,7 +232,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 var scriptElements = document.getElementsByTagName('script');
                 for (var i = 0; i < scriptElements.length; i += 1) {
                     var source = scriptElements[i].src;
-                    var matches = source.match('trumbowyg(\.min)?\.js');
+                    var matches = source.match('trumbowyg(.min)?.js');
                     if (matches != null) {
                         svgPathOption = source.substring(0, source.indexOf(matches[0])) + 'ui/icons.svg';
                     }
@@ -511,6 +512,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             t.isTextarea = t.$ta.is('textarea');
             if (t.isTextarea) {
                 html = t.$ta.val();
+                html = DOMPurify.sanitize(html); // Sanitize the input to prevent XSS
                 t.$ed = $('<div/>');
                 t.$box
                     .insertAfter(t.$ta)
