@@ -28,10 +28,7 @@ gem "terrapin", "~> 0.6.0"
 gem "thor", "~> 1.4", ">= 1.4.0"
 gem "twilio-ruby", "~> 7.3.0" # Does not use semver after v5, watch out!
 
-gem "bootstrap", "~> 4.3"
-gem "sassc-rails", "~> 2.1"
 
-# JS/CSS
 gem "clipboard-rails", "~> 1.7"
 gem "dropzonejs-rails", "~> 0.8.5"
 gem "flatpickr"
@@ -159,7 +156,7 @@ group :development, :test do
   # system specs
   gem "capybara", "~> 3.30"
   gem "launchy", "~> 2.5" # For auto-opening capybara html file
-  gem "puma", "~> 6.4"
+
   gem "selenium-webdriver", "~> 4.15.0" # TODO: Can't upgrade to 4.17 until Rails 7 + Ruby 3.3
 
   # Debugging

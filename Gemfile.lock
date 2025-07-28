@@ -317,7 +317,7 @@ GEM
     immigrant (0.3.6)
       activerecord (>= 3.0)
     io-console (0.7.2)
-    irb (1.14.1)
+
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     iso-639 (0.3.8)
@@ -360,8 +360,7 @@ GEM
     mime-types-data (3.2024.1001)
     mini_magick (4.13.2)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
-    minitest (5.25.4)
+
     mocha (1.16.1)
     msgpack (1.7.3)
     multipart-post (2.4.1)
@@ -379,7 +378,7 @@ GEM
       net-protocol
     netrc (0.11.0)
     nio4r (2.7.3)
-    nokogiri (1.17.1)
+
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     observer (0.1.2)
@@ -407,11 +406,7 @@ GEM
       pry (>= 0.13.0)
     psych (5.1.2)
       stringio
-    public_suffix (6.0.1)
-    puma (6.4.3)
-      nio4r (~> 2.0)
-    racc (1.8.1)
-    rack (3.1.8)
+
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
     rack-proxy (0.7.7)
@@ -423,18 +418,7 @@ GEM
     rackup (2.1.0)
       rack (>= 3)
       webrick (~> 1.8)
-    rails (7.1.5.1)
-      actioncable (= 7.1.5.1)
-      actionmailbox (= 7.1.5.1)
-      actionmailer (= 7.1.5.1)
-      actionpack (= 7.1.5.1)
-      actiontext (= 7.1.5.1)
-      actionview (= 7.1.5.1)
-      activejob (= 7.1.5.1)
-      activemodel (= 7.1.5.1)
-      activerecord (= 7.1.5.1)
-      activestorage (= 7.1.5.1)
-      activesupport (= 7.1.5.1)
+
       bundler (>= 1.15.0)
       railties (= 7.1.5.1)
     rails-controller-testing (1.0.5)
@@ -576,13 +560,7 @@ GEM
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
-    scout_apm (5.4.0)
+
       parser
     scrypt (3.0.8)
       ffi-compiler (>= 1.0, < 2.0)
@@ -609,10 +587,7 @@ GEM
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.2)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      sprockets (>= 3.0.0)
+
     stringio (3.1.1)
     sync (0.5.0)
     sys-filesystem (1.5.3)
@@ -673,8 +648,7 @@ GEM
       zeitwerk (>= 2.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    yard (0.9.37)
-    zeitwerk (2.7.1)
+
 
 PLATFORMS
   ruby
@@ -696,7 +670,7 @@ DEPENDENCIES
   bluecloth (~> 2.2)
   blueprinter (~> 0.25.1)
   bootsnap (~> 1.4)
-  bootstrap (~> 4.3)
+  bootstrap (~> 4.6, >= 4.6.2.1)
   bullet (~> 7.1)
   cancancan (~> 3.1)
   capybara (~> 3.30)
@@ -743,7 +717,7 @@ DEPENDENCIES
   pry (~> 0.13)
   pry-byebug (~> 3.9)
   pry-rails (~> 0.3)
-  puma (~> 6.4)
+
   rack-attack (~> 6.3)
   rails (~> 7.1.0)
   rails-backbone!
