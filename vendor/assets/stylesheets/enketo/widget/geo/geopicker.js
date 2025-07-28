@@ -1177,7 +1177,7 @@ class Geopicker extends Widget {
      */
     _convertKmlCoordinatesToLeafletCoordinates( kmlCoordinates ) {
         const coordinates = [];
-        const reg = /<\s?coordinates>(([^<]|\n)*)<\/\s?coordinates\s?>/;
+        const reg = /<\s?coordinates>([^<\n]*)<\/\s?coordinates\s?>/;
         const tags = reg.test( kmlCoordinates );
 
         kmlCoordinates = ( tags ) ? kmlCoordinates.match( reg )[ 1 ] : kmlCoordinates;
