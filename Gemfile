@@ -83,7 +83,7 @@ gem "ancestry", "~> 4.1"
 gem "closure_tree", github: "sassafrastech/closure_tree", tag: "v7.4.0-noReorder-fastInsert"
 
 # Auto rank maintenance for sorted lists.
-gem "acts_as_list"
+gem "acts_as_list", ">= 1.2.4"
 
 # Caching
 gem "actionpack-page_caching", "~> 1.1"
@@ -91,7 +91,7 @@ gem "bootsnap", "~> 1.4", require: false
 gem "dalli", "~> 3.2"
 
 # DB
-gem "hairtrigger", "~> 0.2.20"
+gem "hairtrigger", "~> 1.0.0"
 gem "immigrant", "~> 0.3.1" # foreign key maintenance
 gem "pg", "~> 1.5"
 gem "pg_search", "~> 2.1"
@@ -100,7 +100,7 @@ gem "wisper", "~> 2.0"
 gem "wisper-activerecord", "~> 1.0"
 
 # Background/async
-gem "delayed_job_active_record", "~> 4.1"
+gem "delayed_job_active_record", "~> 4.1", ">= 4.1.11"
 gem "parallel", "~> 1.19"
 gem "whenever", "~> 1.0", require: false
 
