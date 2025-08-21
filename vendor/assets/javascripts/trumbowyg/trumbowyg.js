@@ -982,7 +982,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                         .removeClass(prefix + 'editor')
                         .removeAttr('contenteditable')
                         .removeAttr('dir')
-                        .html(t.html())
+                        .html(DOMPurify.sanitize(t.html()))
                         .show()
                 );
             }
