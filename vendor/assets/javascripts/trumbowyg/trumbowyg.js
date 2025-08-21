@@ -1090,12 +1090,10 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (!force && t.$ed.is(':visible')) {
                 t.syncTextarea();
             } else {
-                // wrap the content in a div it's easier to get the innerhtml
-                var html = $('<div>').html(t.$ta.val());
-                //scrub the html before loading into the doc
-                var safe = $('<div>').append(html);
-                $(t.o.tagsToRemove.join(','), safe).remove();
-                t.$ed.html(safe.contents().html());
+                // Sanitize the HTML from the textarea before loading into the editor
+                var rawHtml = t.$ta.val();
+                var sanitizedHtml = DOMPurify.sanitize(rawHtml);
+                t.$ed.html(sanitizedHtml);
             }
 
             if (t.o.autogrow) {
