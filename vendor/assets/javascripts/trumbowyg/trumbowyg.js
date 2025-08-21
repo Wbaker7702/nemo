@@ -9,6 +9,7 @@
  *         Website : alex-d.fr
  */
 
+import DOMPurify from 'dompurify'; // Import DOMPurify for sanitization
 jQuery.trumbowyg = {
     langs: {
         en: {
@@ -231,7 +232,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                 var scriptElements = document.getElementsByTagName('script');
                 for (var i = 0; i < scriptElements.length; i += 1) {
                     var source = scriptElements[i].src;
-                    var matches = source.match('trumbowyg(\.min)?\.js');
+                    var matches = source.match('trumbowyg(.min)?.js');
                     if (matches != null) {
                         svgPathOption = source.substring(0, source.indexOf(matches[0])) + 'ui/icons.svg';
                     }
@@ -511,6 +512,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             t.isTextarea = t.$ta.is('textarea');
             if (t.isTextarea) {
                 html = t.$ta.val();
+                html = DOMPurify.sanitize(html); // Sanitize the input to prevent XSS
                 t.$ed = $('<div/>');
                 t.$box
                     .insertAfter(t.$ta)
@@ -980,7 +982,7 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
                         .removeClass(prefix + 'editor')
                         .removeAttr('contenteditable')
                         .removeAttr('dir')
-                        .html(t.html())
+                        .html(DOMPurify.sanitize(t.html()))
                         .show()
                 );
             }
@@ -1088,12 +1090,10 @@ Object.defineProperty(jQuery.trumbowyg, 'defaultOptions', {
             if (!force && t.$ed.is(':visible')) {
                 t.syncTextarea();
             } else {
-                // wrap the content in a div it's easier to get the innerhtml
-                var html = $('<div>').html(t.$ta.val());
-                //scrub the html before loading into the doc
-                var safe = $('<div>').append(html);
-                $(t.o.tagsToRemove.join(','), safe).remove();
-                t.$ed.html(safe.contents().html());
+                // Sanitize the HTML from the textarea before loading into the editor
+                var rawHtml = t.$ta.val();
+                var sanitizedHtml = DOMPurify.sanitize(rawHtml);
+                t.$ed.html(sanitizedHtml);
             }
 
             if (t.o.autogrow) {
