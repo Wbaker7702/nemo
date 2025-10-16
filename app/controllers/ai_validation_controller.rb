@@ -221,7 +221,7 @@ class AiValidationController < ApplicationController
   def rule_params
     params.require(:ai_validation_rule).permit(
       :name, :description, :rule_type, :ai_model, :threshold, :active,
-      config: {}
+      config: [:max_length, :min_score] # Only permit expected config keys
     )
   end
 
