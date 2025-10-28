@@ -21,6 +21,21 @@ environment.loaders.append('enketo', {
 
 environment.loaders.delete('nodeModules');
 
+// Webpack 5 compatibility: Remove old node polyfills configuration
+// and use resolve.fallback instead
+environment.config.delete('node');
+environment.config.merge({
+  resolve: {
+    fallback: {
+      dgram: false,
+      fs: false,
+      net: false,
+      tls: false,
+      child_process: false,
+    },
+  },
+});
+
 // For debugging:
 // console.log('---\nWebpack config:\n', JSON.stringify(environment.toWebpackConfig(), null, 2), '\n---');
 
