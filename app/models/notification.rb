@@ -31,6 +31,8 @@
 class Notification < ApplicationRecord
   include MissionBased
 
+  self.inheritance_column = :_type_disabled
+
   belongs_to :user
   belongs_to :mission, optional: true
 
