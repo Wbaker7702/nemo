@@ -316,4 +316,5 @@ sudo systemctl is-active nginx delayed-job
 - [Full CI/CD Documentation](ci-cd-pipeline.md)
 - [Production README](../PRODUCTION_README.md)
 - [Deployment History](DEPLOYMENT_HISTORY.md)
+- [Production Setup](production-setup.md)
 - [Architecture Guide](architecture.md)

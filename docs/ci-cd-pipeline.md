@@ -308,8 +308,8 @@ Images are tagged with multiple strategies:
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Docker Documentation](https://docs.docker.com/)
 - [Trivy Security Scanner](https://github.com/aquasecurity/trivy)
-- [NEMO Production Setup Guide](./production-setup.md)
-- [NEMO Deployment Guide](./DEPLOYMENT.md)
+- [NEMO Production Setup Guide](production-setup.md)
+- [NEMO Deployment Guide](DEPLOYMENT.md)
 
 ## Support
 
