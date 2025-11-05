@@ -18,6 +18,14 @@ You can also learn more about The Carter Center [here](https://cartercenter.org)
 
 ## Documentation
 
+### Build and Deployment
+
+NEMO uses GitHub Actions for continuous integration and deployment. The CI/CD pipeline automatically builds, tests, and deploys the application.
+
+- **Build Status:** Automated builds run on every push
+- **Deployment:** Automated deployment to staging (develop branch) and production (main branch)
+- **CI/CD Guide:** See the [CI/CD Pipeline Documentation](docs/ci-cd-pipeline.md) for details
+
 ### Usage
 
 See the [NEMO Documentation](https://getnemo.readthedocs.io) for help on using your new NEMO instance!
