@@ -33,7 +33,8 @@ gem "thor", "~> 1.4"
 gem "twilio-ruby", "~> 7.2.0" # Does not use semver after v5, watch out!
 
 # JS/CSS
-gem "bootstrap", "~> 4.3"
+gem "bootstrap", "~> 5.0"
+# gem "bootstrap", "~> 4.3"  # Commented out - using Bootstrap 5.0
 gem "sassc-rails", "~> 2.1"
 gem "clipboard-rails", "~> 1.7"
 gem "dropzonejs-rails", "~> 0.8.5"
@@ -41,7 +42,7 @@ gem "flatpickr"
 gem "font-awesome-rails", "~> 4.7"
 gem "jquery-fileupload-rails", "~> 1.0"
 gem "jquery-rails", "~> 4.3"
-gem "popper_js", "~> 1.14"
+gem "popper_js", "~> 2.11"
 gem "rails-backbone", git: "https://github.com/codebrew/backbone-rails.git"
 gem "react-rails", "~> 3.0"
 gem "select2-rails", "~> 4.0"
