@@ -37,6 +37,7 @@
   },
   "resolutions": {
     "@xmldom/xmldom": "0.7.7",
+    "braces": "3.0.3",
     "cheerio": "1.0.0-rc.12",
     "tar": "7.5.7"
   },
