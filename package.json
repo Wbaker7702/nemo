@@ -61,7 +61,7 @@
     "@babel/preset-env": "7",
     "@babel/preset-react": "^7.28.5",
     "@babel/runtime": "7",
-    "@sentry/react": "7.119.1",
+    "@sentry/react": "7.120.4",
     "@sentry/tracing": "7.119.1",
     "@types/babel__core": "7",
     "@types/webpack": "5",
