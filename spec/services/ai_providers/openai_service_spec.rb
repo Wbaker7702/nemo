@@ -167,5 +167,38 @@ describe AiProviders::OpenaiService do
       expect(result).to be_a(Hash)
       expect(result[:confidence]).to eq(0.5) # Fallback value
     end
+
+    it "extracts issues and suggestions from unstructured fallback text" do
+      fallback_content = <<~TEXT
+        Issues: Missing required email field
+        suggestion\t\tAdd email format validation
+        issue invalid phone number
+        Suggestion: Normalize phone number formatting
+      TEXT
+
+      stub_request(:post, "https://api.openai.com/v1/chat/completions")
+        .to_return(
+          status: 200,
+          body: {
+            "choices" => [{
+              "message" => {
+                "content" => fallback_content
+              }
+            }]
+          }.to_json,
+          headers: {"Content-Type" => "application/json"}
+        )
+
+      result = service.call_ai_model("test")
+
+      expect(result[:issues]).to eq([
+                                    "Missing required email field",
+                                    "invalid phone number"
+                                  ])
+      expect(result[:suggestions]).to eq([
+                                         "Add email format validation",
+                                         "Normalize phone number formatting"
+                                       ])
+    end
   end
 end

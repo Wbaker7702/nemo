@@ -360,12 +360,16 @@ class ResponsesController < ApplicationController
     if @response.form.odk_xml.blank?
       flash[:error] = t("activerecord.errors.models.response.no_form_xml")
       return redirect_to(index_url_with_context(enketo: ""))
+      return redirect_to(responses_path(enketo: ""))
+      return redirect_to(responses_path(permitted_index_params.merge(enketo: "")))
     end
 
     # This check is here until we have a way to encode legacy editor responses as ODK XML.
     if action_name == "edit" && !@response.odk_xml.attached?
       flash[:error] = t("activerecord.errors.models.response.no_response_xml")
       return redirect_to(index_url_with_context(enketo: ""))
+      return redirect_to(responses_path(enketo: ""))
+      return redirect_to(responses_path(permitted_index_params.merge(enketo: "")))
     end
 
     @enketo_form_obj = enketo_form_obj
