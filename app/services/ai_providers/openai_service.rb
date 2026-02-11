@@ -144,6 +144,18 @@ class AiProviders::OpenaiService < AiProviders::BaseService
   end
 
   def fallback_parse(content)
+    content_text = content.to_s
+
+    # Fallback: try to extract information from text response
+    issues = extract_fallback_items(content_text, "issue")
+    suggestions = extract_fallback_items(content_text, "suggestion")
+
+    {
+      confidence: 0.5, # Default confidence for unstructured response
+      is_valid: !content_text.downcase.include?("invalid") && !content_text.downcase.include?("error"),
+      issues: issues,
+      suggestions: suggestions,
+      explanation: content_text.truncate(500)
     # Fallback: parse line-by-line to avoid expensive regex on untrusted input
     content_text = content.to_s
     issues = []
@@ -194,5 +206,35 @@ class AiProviders::OpenaiService < AiProviders::BaseService
     end
 
     nil
+  end
+
+  def extract_fallback_items(content, label)
+    label_downcased = label.downcase
+
+    content.each_line.filter_map do |line|
+      candidate = strip_fallback_list_prefix(line.strip)
+      next if candidate.empty?
+
+      candidate_downcased = candidate.downcase
+      next unless candidate_downcased.start_with?(label_downcased)
+
+      remainder = candidate[label.length..]
+      next if remainder.nil? || remainder.empty?
+
+      separator = remainder[0]
+      next unless separator == ":" || separator == " " || separator == "\t"
+
+      value = remainder[1..]&.strip.to_s
+      value = value[1..]&.strip.to_s if value.start_with?(":")
+      next if value.empty?
+
+      value
+    end
+  end
+
+  def strip_fallback_list_prefix(text)
+    return text unless text.start_with?("-", "*")
+
+    text[1..]&.lstrip.to_s
   end
 end
