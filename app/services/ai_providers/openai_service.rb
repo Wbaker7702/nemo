@@ -144,16 +144,55 @@ class AiProviders::OpenaiService < AiProviders::BaseService
   end
 
   def fallback_parse(content)
-    # Fallback: try to extract information from text response
-    issues = content.scan(/issue[:\s]+(.+?)(?:\n|$)/i).flatten
-    suggestions = content.scan(/suggestion[:\s]+(.+?)(?:\n|$)/i).flatten
+    # Fallback: parse line-by-line to avoid expensive regex on untrusted input
+    content_text = content.to_s
+    issues = []
+    suggestions = []
+
+    content_text.each_line do |line|
+      parsed = parse_fallback_line(line)
+      next unless parsed
+
+      label, value = parsed
+      issues << value if label == :issue
+      suggestions << value if label == :suggestion
+    end
+
+    downcased_content = content_text.downcase
 
     {
       confidence: 0.5, # Default confidence for unstructured response
-      is_valid: !content.downcase.include?("invalid") && !content.downcase.include?("error"),
+      is_valid: !downcased_content.include?("invalid") && !downcased_content.include?("error"),
       issues: issues.any? ? issues : [],
       suggestions: suggestions.any? ? suggestions : [],
-      explanation: content.truncate(500)
+      explanation: content_text.truncate(500)
     }
+  end
+
+  def parse_fallback_line(line)
+    stripped_line = line.to_s.strip
+    return if stripped_line.empty?
+
+    labels = {
+      "issue" => :issue,
+      "issues" => :issue,
+      "suggestion" => :suggestion,
+      "suggestions" => :suggestion
+    }
+
+    normalized_line = stripped_line.downcase
+
+    labels.each do |label_text, label_type|
+      next unless normalized_line.start_with?(label_text)
+
+      separator = normalized_line[label_text.length]
+      next unless separator.nil? || separator == ":" || separator.strip.empty?
+
+      value = stripped_line[label_text.length..]&.lstrip
+      value = value[1..]&.lstrip if value&.start_with?(":")
+      return [label_type, value] if value && !value.empty?
+    end
+
+    nil
   end
 end
