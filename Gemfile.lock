@@ -9,6 +9,19 @@ GIT
       railties
 
 GIT
+  remote: https://github.com/junipereducation/azure-storage-ruby.git
+  revision: cec9a49711fd90c2a1b1b8552d1b4979e7ff32ec
+  ref: cec9a49711fd90c2a1b1b8552d1b4979e7ff32ec
+  glob: common/azure-storage-common.gemspec
+  specs:
+    azure-storage-common (2.0.4)
+      faraday (>= 1.0, < 3)
+      faraday-follow_redirects (~> 0.3.0)
+      faraday-net_http_persistent (~> 2.0)
+      net-http-persistent (~> 4.0)
+      nokogiri (~> 1, >= 1.10.8)
+
+GIT
   remote: https://github.com/sassafrastech/closure_tree.git
   revision: 1000b5d9089c3a2e829bbde1371dbe3886ee28ff
   tag: v7.4.0-noReorder-fastInsert
@@ -150,11 +163,6 @@ GEM
     azure-storage-blob (2.0.3)
       azure-storage-common (~> 2.0)
       nokogiri (~> 1, >= 1.10.8)
-    azure-storage-common (2.0.4)
-      faraday (~> 1.0)
-      faraday_middleware (~> 1.0, >= 1.0.0.rc1)
-      net-http-persistent (~> 4.0)
-      nokogiri (~> 1, >= 1.10.8)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -250,31 +258,17 @@ GEM
       railties (>= 4.2.0)
     faker (2.23.0)
       i18n (>= 1.8.11, < 2)
-    faraday (1.10.4)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0)
-      faraday-multipart (~> 1.0)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.0)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      faraday-retry (~> 1.0)
-      ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.1)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
-    faraday-multipart (1.1.1)
-      multipart-post (~> 2.0)
-    faraday-net_http (1.0.2)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
-    faraday-retry (1.0.3)
-    faraday_middleware (1.2.1)
-      faraday (~> 1.0)
+    faraday (2.14.1)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-follow_redirects (0.3.0)
+      faraday (>= 1, < 3)
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
+    faraday-net_http_persistent (2.3.1)
+      faraday (~> 2.5)
+      net-http-persistent (>= 4.0.4, < 5)
     ffi (1.17.2)
     ffi-compiler (1.3.2)
       ffi (>= 1.15.5)
@@ -358,7 +352,8 @@ GEM
     minitest (5.27.0)
     mocha (1.16.1)
     msgpack (1.8.0)
-    multipart-post (2.4.1)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-http-persistent (4.0.8)
       connection_pool (>= 2.2.4, < 4)
     net-imap (0.5.12)
@@ -701,6 +696,7 @@ DEPENDENCIES
   awesome_print (~> 1.6)
   aws-sdk-s3 (~> 1.208)
   azure-storage-blob (~> 2.0)
+  azure-storage-common!
   binding_of_caller (~> 1.0.0)
   bluecloth (~> 2.2)
   blueprinter (~> 0.25.1)
@@ -726,6 +722,7 @@ DEPENDENCIES
   exception_notification (~> 5.0, >= 5.0.0)
   factory_bot_rails (~> 5.0, >= 5.0.0)
   faker (~> 2.2)
+  faraday (>= 2.14.1)
   fix-db-schema-conflicts (~> 3.0)
   flatpickr
   font-awesome-rails (~> 4.7)

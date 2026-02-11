@@ -69,6 +69,13 @@ gem "reverse_markdown", "~> 2.0"
 gem "active_storage_validations", "~> 1.0.0"
 gem "aws-sdk-s3", "~> 1.208", require: false
 gem "azure-storage-blob", "~> 2.0", require: false
+# Use a Faraday-2-compatible azure-storage-common to resolve Faraday SSRF advisory.
+gem "azure-storage-common",
+    github: "junipereducation/azure-storage-ruby",
+    ref: "cec9a49711fd90c2a1b1b8552d1b4979e7ff32ec",
+    glob: "common/azure-storage-common.gemspec",
+    require: false
+gem "faraday", ">= 2.14.1", require: false
 gem "image_processing", "~> 1.12"
 gem "sys-filesystem", "~> 1.4"
 
