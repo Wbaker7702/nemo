@@ -128,6 +128,41 @@ describe AiProviders::OpenaiService do
     end
   end
 
+  describe "#fallback_parse" do
+    it "extracts issue and suggestion entries from plain text" do
+      content = <<~TEXT
+        Issue: Missing required field
+        Suggestion: Add a value for the field
+      TEXT
+
+      result = service.send(:fallback_parse, content)
+
+      expect(result[:issues]).to eq(["Missing required field"])
+      expect(result[:suggestions]).to eq(["Add a value for the field"])
+    end
+
+    it "handles tab-heavy input without regex backtracking" do
+      content = "issue\t#{("\t\t" * 10_000)}Missing age\nSuggestion: Provide an age"
+
+      result = service.send(:fallback_parse, content)
+
+      expect(result[:issues]).to eq(["Missing age"])
+      expect(result[:suggestions]).to eq(["Provide an age"])
+    end
+
+    it "ignores plural labels to preserve existing matching behavior" do
+      content = <<~TEXT
+        Issues: This should not be extracted
+        Suggestions: This should not be extracted
+      TEXT
+
+      result = service.send(:fallback_parse, content)
+
+      expect(result[:issues]).to eq([])
+      expect(result[:suggestions]).to eq([])
+    end
+  end
+
   describe "#estimate_cost" do
     it "calculates cost for gpt-3.5-turbo" do
       cost = service.estimate_cost(1000, 500)
