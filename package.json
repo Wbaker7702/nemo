@@ -74,7 +74,7 @@
     "ignore-loader": "0.1.2",
     "jquery": "3.6.0",
     "lodash": "4.17.23",
-    "mini-css-extract-plugin": "^2.9.0",
+    "mini-css-extract-plugin": "^2.10.0",
     "mobx": "^5.15.7",
     "mobx-react": "5.4.4",
     "moment": "2.30.1",
