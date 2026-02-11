@@ -359,13 +359,13 @@ class ResponsesController < ApplicationController
     # Enketo can't render anything if we haven't rendered it to XML (e.g. unpublished draft).
     if @response.form.odk_xml.blank?
       flash[:error] = t("activerecord.errors.models.response.no_form_xml")
-      return redirect_to(permitted_index_params.merge(enketo: ""))
+      return redirect_to(responses_path(enketo: ""))
     end
 
     # This check is here until we have a way to encode legacy editor responses as ODK XML.
     if action_name == "edit" && !@response.odk_xml.attached?
       flash[:error] = t("activerecord.errors.models.response.no_response_xml")
-      return redirect_to(permitted_index_params.merge(enketo: ""))
+      return redirect_to(responses_path(enketo: ""))
     end
 
     @enketo_form_obj = enketo_form_obj
