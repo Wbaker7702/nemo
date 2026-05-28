@@ -62,7 +62,7 @@ gem "will_paginate-bootstrap4", "~> 0.2.2"
 
 # Markdown
 gem "bluecloth", "~> 2.2"
-gem "rdiscount", "~> 2.1"
+gem "rdiscount", "~> 2.2"
 gem "reverse_markdown", "~> 2.0"
 
 # Storage
