@@ -51,6 +51,7 @@ gem "react-rails", "~> 3.0"
 gem "select2-rails", "~> 4.0"
 gem "spinjs-rails", "~> 1.4.0" # Breaking changes in v1.4 (spin.js v2.0).
 gem "uglifier", "~> 4.2"
+gem "shakapacker", "~> 10.3.2"
 gem "shakapacker", "~> 8.4.0"
 
 # Authz and Authn
